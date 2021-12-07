@@ -1,9 +1,9 @@
 import numpy as np
 
 p = np.int32(np.genfromtxt('input7.txt',delimiter=','))
-costs = np.inf * np.ones(p.max() - p.min() + 1)
+cost = np.inf
 for i in range(min(p), max(p) + 1):
    n = np.abs(p-i)
-   costs[i] = int(sum(n*(n+1)/2)) # sum a gaussian summation
+   cost = np.minimum(cost, int(sum(n * (n + 1) / 2)))
 
-print(int(costs.min()))
+print(int(cost))
