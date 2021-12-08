@@ -21,7 +21,7 @@ for i in range(0, nlines):
       sorted_characters = sorted(displays[i,j])
       displays[i,j] = "".join(sorted_characters)
 
-# Process all four-segment displays
+# Process all displays
 for i in range(0, nlines):
    # Find digits 7 and 4
    for j in range(0, 10):
