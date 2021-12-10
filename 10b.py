@@ -11,9 +11,8 @@ def syntaxcheck(line, last, current):
     if len(line) == current: # out of data
         sc = [score[closing[x]] for x in line[::-1]]
         s = 0
-        f = lambda x, y : 5*x + y
         for k in sc:
-            s = f(s, k)
+            s = 5*s + k
         ret = s
     elif line[current] in opening: # open new one
         ret = syntaxcheck(line, last + 1, current + 1)
